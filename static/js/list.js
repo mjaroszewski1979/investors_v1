@@ -50,15 +50,13 @@ function buildList(){
 
             var item = `
                 <div id="data-row-${i}" class="task-wrapper flex-wrapper">
-                    <div style="flex:7">
+                    <div style="margin-bottom: 1em;">
                         ${title}
                     </div>
-                    <div style="flex:1">
-                        <button class="btn btn-sm btn-outline-info edit">Edit </button>
-                    </div>
-                    <div style="flex:1">
-                        <button class="btn btn-sm btn-outline-dark delete">-</button>
-                    </div>
+                    <ul class="actions">
+                    <li><button class="button small icon solid fas fa-edit edit">Edit </button></li>
+                    <li><button class="button small icon solid fal fa-trash-alt delete">Delete</button></li>
+                    </ul>
                 </div>
             `
             wrapper.innerHTML += item
