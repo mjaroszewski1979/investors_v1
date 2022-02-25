@@ -26,7 +26,7 @@ function buildList(){
 
 
 
-    var url = 'http://127.0.0.1:8000/api/task-list/'
+    var url = 'http://127.0.0.1:8000/api/investor-list/'
 
     fetch(url)
     .then((resp) => resp.json())
@@ -45,13 +45,13 @@ function buildList(){
     
 
 
-            var title = `<span class="title">${list[i].title}</span>`
+            var full_name = `<span class="full_name">${list[i].full_name}</span>`
 
 
             var item = `
                 <div id="data-row-${i}" class="task-wrapper flex-wrapper">
                     <div style="margin-bottom: 1em;">
-                        ${title}
+                        ${full_name}
                     </div>
                     <ul class="actions">
                     <li><button class="button small icon solid fas fa-edit edit">Edit </button></li>
@@ -75,7 +75,7 @@ function buildList(){
         for (var i in list){
             var editBtn = document.getElementsByClassName('edit')[i]
             var deleteBtn = document.getElementsByClassName('delete')[i]
-            var title = document.getElementsByClassName('title')[i]
+            var full_name = document.getElementsByClassName('full_name')[i]
 
 
             editBtn.addEventListener('click', (function(item){
@@ -103,22 +103,22 @@ var form = document.getElementById('form-wrapper')
 form.addEventListener('submit', function(e){
     e.preventDefault()
     console.log('Form submitted')
-    var url = 'http://127.0.0.1:8000/api/task-create/'
+    var url = 'http://127.0.0.1:8000/api/investor-create/'
     if (activeItem != null){
-        var url = `http://127.0.0.1:8000/api/task-update/${activeItem.id}/`
+        var url = `http://127.0.0.1:8000/api/investor-update/${activeItem.id}/`
         activeItem = null
     }
 
 
 
-    var title = document.getElementById('title').value
+    var full_name = document.getElementById('full_name').value
     fetch(url, {
         method:'POST',
         headers:{
             'Content-type':'application/json',
             'X-CSRFToken':csrftoken,
         },
-        body:JSON.stringify({'title':title})
+        body:JSON.stringify({'full_name':full_name})
     }
     ).then(function(response){
         buildList()
@@ -132,13 +132,13 @@ form.addEventListener('submit', function(e){
 function editItem(item){
     console.log('Item clicked:', item)
     activeItem = item
-    document.getElementById('title').value = activeItem.title
+    document.getElementById('full_name').value = activeItem.full_name
 }
 
 
 function deleteItem(item){
     console.log('Delete clicked')
-    fetch(`http://127.0.0.1:8000/api/task-delete/${item.id}/`, {
+    fetch(`http://127.0.0.1:8000/api/investor-delete/${item.id}/`, {
         method:'DELETE', 
         headers:{
             'Content-type':'application/json',

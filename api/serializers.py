@@ -1,8 +1,8 @@
 from rest_framework import serializers
 
-from .models import Task
+from .models import Investor
 
-class TaskSerializer(serializers.ModelSerializer):
+class InvestorSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Task
+        model = Investor
         fields = '__all__'
