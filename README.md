@@ -1,10 +1,10 @@
 ## Famous Investors
-### This is a Python application powered by Django and its Object-Relational Mapper to provide convenient access to stored data. Users are able to create, read, update and delete records from an existing database.
+### This is a Python application powered by Django and its Object-Relational Mapper to provide convenient access to stored data. It takes full advantage of Django Rest Framework  Web browsable API in the backend. Application's front-end is using JavaScript modern and versatile method called Fetch. It can send network requests to the server and load new information whenever it’s needed without reloading the page.
 
 --------------------------------------------------
 
 ### Features:
-* Taking full advantage of Django's built-in features like cross-site request forgery protection to ensure safe data transfer in web forms to a database
+* Utilizing Django's built-in features like cross-site request forgery protection to ensure safe data transfer in web forms to a database
 * Breaking logic into smaller parts by adding various new Django applications to an existing project 
 * Writing as much functionality as possible in models or utility files instead of views 
 * Storing app’s secure credentials in environment variables
