@@ -10,6 +10,20 @@
 * Storing app’s secure credentials in environment variables
 * Working with Javascript Fetch - built-in way to make API requests which provides an easy, logical way to fetch resources asynchronously
 
+--------------------------------------------------
+
+### Code Coverage:
+* Selenium and unit tests combined
+
+```
+coverage run -p manage.py test api && coverage run -p manage.py test frontend && coverage run -p manage.py test selenium_tests && coverage combine && coverage html
+
+```
+
+<img src="https://github.com/mjaroszewski1979/investors_v1/blob/main/cov_report.png">
+
+------------------------------------------------
+
 
 ![caption](https://github.com/mjaroszewski1979/investors_v1/blob/main/investors_mockup.png)
   
